@@ -11,6 +11,7 @@ help:
 
 build: clean
 	docker build . \
+		--no-cache \
 		--build-arg NODE_VERSION="${NODE_VERSION}" \
 		--tag node${NODE_VERSION}-canvas-layers
 	mkdir -p build

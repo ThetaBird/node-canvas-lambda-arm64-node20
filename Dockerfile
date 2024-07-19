@@ -17,7 +17,8 @@ RUN yum -y update \
 	cairo-devel \
 	libjpeg-turbo-devel \
 	pango-devel \
-	giflib-devel
+	giflib-devel \
+	fontconfig
 
 # will be created and become working dir
 WORKDIR $OUT/nodejs
