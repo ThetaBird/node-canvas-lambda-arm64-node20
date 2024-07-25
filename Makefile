@@ -11,13 +11,11 @@ help:
 
 build: clean
 	docker build . \
-		--no-cache \
 		--build-arg NODE_VERSION="${NODE_VERSION}" \
-		--tag node${NODE_VERSION}-canvas-layers
+		--tag node${NODE_VERSION}-bcrypt-layers
 	mkdir -p build
-	docker create -ti --name dummy node${NODE_VERSION}-canvas-layers bash
-	docker cp dummy:/root/layers/node${NODE_VERSION}_canvas_lib64_layer.zip build/
-	docker cp dummy:/root/layers/node${NODE_VERSION}_canvas_layer.zip build/
+	docker create -ti --name dummy node${NODE_VERSION}-bcrypt-layers bash
+	docker cp dummy:/root/layers/node${NODE_VERSION}_bcrypt_layer.zip build/
 	docker rm -f dummy
 
 publish-lib:
